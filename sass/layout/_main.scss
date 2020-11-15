@@ -1,0 +1,172 @@
+h1, h2, p{
+    
+    color: map-get($colors, color_text_main);
+    font-family: 'Goldman', cursive;
+}
+
+
+h1{
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 100px;
+    max-width: 1140px;
+    text-align: center;
+}
+
+header{
+    position: relative;
+    height: 100px;
+    background: #999999;
+    padding-bottom: 6px;
+
+}
+
+header::after{
+    content: '';
+    height: 6px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
+    background: map-get($colors, color_maree_1);; /* Old browsers */
+    background: -moz-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+    background: linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+  }
+
+h2{
+    margin-bottom: 1.5rem;
+
+}
+
+.div_h1{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divExplanations{
+    max-width: 1140px;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.message{
+
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.messageDone{
+    background-color: white;
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+}
+
+.hidden{
+    display: none;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.buttonOneColor{
+    width: 2rem;
+    height: 2rem; 
+    margin-right: 2rem;
+}
+
+.maree{
+    background-color: map-get($colors, background_color_grid);
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    width: 80%;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 
+	0 0 0 2px #000,
+	0 0 0 3px #999,
+	0 0 0 16px rgb(168, 168, 168),
+	0 0 0 10px #666,
+	0 0 0 16px rgb(228, 228, 228),
+	0 0 0 18px #000;
+}
+
+.divOneColor{
+
+
+    margin: 0.1rem;
+}
+
+.divOneColor:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+
+
+.rouge{
+    background-color: map-get($colors, color_maree_1);
+}
+
+.vert{
+    background-color: map-get($colors, color_maree_2);
+}
+
+.bleu{
+    background-color: map-get($colors, color_maree_3);
+}
+
+.violet{
+    background-color:  map-get($colors, color_maree_4);
+}
+
+@media only screen and (min-width: 768px){
+    h1{
+
+        font-size: 2rem;
+        text-align: left;
+    }
+    .divExplanations{
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .divOneColor{
+
+        margin: 0.1rem;
+    }
+
+    .maree{
+        width: map-get($sizes, width_computer);
+    }
+
+    
+}

@@ -1,153 +1,447 @@
-/*
-CSS pour la mise en forme de la marée
-*/
+/* Grid system inspired by boostrap */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-1 {
+  flex: 0 0 8.3333333333%;
+  max-width: 8.3333333333%;
+}
+
+.col-2 {
+  flex: 0 0 16.6666666667%;
+  max-width: 16.6666666667%;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.col-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 33.3333333333%;
+}
+
+.col-5 {
+  flex: 0 0 41.6666666667%;
+  max-width: 41.6666666667%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-7 {
+  flex: 0 0 58.3333333333%;
+  max-width: 58.3333333333%;
+}
+
+.col-8 {
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.col-10 {
+  flex: 0 0 83.3333333333%;
+  max-width: 83.3333333333%;
+}
+
+.col-11 {
+  flex: 0 0 91.6666666667%;
+  max-width: 91.6666666667%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .col-md-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+
+  .col-md-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .col-md-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-md-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+
+  .col-md-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .col-md-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+
+  .col-md-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-1 {
+    flex: 0 0 8.3333333333%;
+    max-width: 8.3333333333%;
+  }
+
+  .col-lg-2 {
+    flex: 0 0 16.6666666667%;
+    max-width: 16.6666666667%;
+  }
+
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-4 {
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+  }
+
+  .col-lg-5 {
+    flex: 0 0 41.6666666667%;
+    max-width: 41.6666666667%;
+  }
+
+  .col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-7 {
+    flex: 0 0 58.3333333333%;
+    max-width: 58.3333333333%;
+  }
+
+  .col-lg-8 {
+    flex: 0 0 66.6666666667%;
+    max-width: 66.6666666667%;
+  }
+
+  .col-lg-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .col-lg-10 {
+    flex: 0 0 83.3333333333%;
+    max-width: 83.3333333333%;
+  }
+
+  .col-lg-11 {
+    flex: 0 0 91.6666666667%;
+    max-width: 91.6666666667%;
+  }
+
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+/*
+
+$colors: (
+    back_color_main: #fff,
+    back_color_second: #faf9ff,
+    color_title: #222222,
+    color_text: #777777,
+    color_link: #edc587,
+    back_color_graduation1: rgb(255, 229, 153),
+    back_color_graduation2: #cbcbcb,
+    back_color_footer: black,
+    border_color: rgb(185, 184, 184)
+);
+
+
+@mixin flex_center_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*/
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
 }
+
 body {
-	line-height: 1;
+  line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+  list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+  quotes: none;
 }
-blockquote:before, blockquote:after,
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
 q:before, q:after {
-	content: '';
-	content: none;
+  content: "";
+  content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
-/**********************************************************************************************************
-**************************************************** NOT RESET
-************************************************/
-
-
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-html{
-    font-size: 17px;
+h1, h2, p {
+  color: white;
+  font-family: "Goldman", cursive;
 }
 
-h1{
-    margin: 2rem 0;
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 100px;
+  max-width: 1140px;
+  text-align: center;
+}
+
+header {
+  position: relative;
+  height: 100px;
+  background: #999999;
+  padding-bottom: 6px;
+}
+
+header::after {
+  content: "";
+  height: 6px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
+  background: aqua;
+  /* Old browsers */
+  background: -moz-linear-gradient(left, aqua 0%, aqua 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, aqua 0%, aqua 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  /* FF3.6-15 */
+  background: linear-gradient(left, aqua 0%, aqua 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  /* FF3.6-15 */
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+}
+
+.div_h1 {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divExplanations {
+  max-width: 1140px;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.message {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.messageDone {
+  background-color: white;
+  width: 10rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.buttonOneColor {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2rem;
+}
+
+.maree {
+  background-color: black;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  width: 80%;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 0 2px #000, 0 0 0 3px #999, 0 0 0 16px #a8a8a8, 0 0 0 10px #666, 0 0 0 16px #e4e4e4, 0 0 0 18px #000;
+}
+
+.divOneColor {
+  margin: 0.1rem;
+}
+
+.divOneColor:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+.rouge {
+  background-color: aqua;
+}
+
+.vert {
+  background-color: lime;
+}
+
+.bleu {
+  background-color: yellow;
+}
+
+.violet {
+  background-color: fuchsia;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
     font-size: 2rem;
-}
+    text-align: left;
+  }
 
-h2{
-    margin-bottom: 1.5rem;
-}
-
-.sectionExplanaitions{
-    max-width: 1140px;
+  .divExplanations {
     margin-left: auto;
     margin-right: auto;
-}
+  }
 
-.message{
-
-    position: absolute;
-    z-index: 10;
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-
-}
-
-
-.messageDone{
-    background-color: white;
-    width: 10rem;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-}
-
-.hidden{
-    display: none;
-}
-
-.buttons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-
-.buttonOneColor{
-    width: 2rem;
-    height: 2rem; 
-    margin-right: 2rem;
-}
-
-.maree{
-    display: flex;
-    flex-wrap: wrap;
-    width: 24rem;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.divOneColor{
-    width: 1rem;
-    height: 1rem;
+  .divOneColor {
     margin: 0.1rem;
+  }
+
+  .maree {
+    width: 24rem;
+  }
+}
+html {
+  font-size: 17px;
 }
 
-
-.rouge{
-    background-color: red;
+body {
+  background-color: #1c1c1c;
 }
 
-.vert{
-    background-color: green;
-}
-
-.bleu{
-    background-color: blue;
-}
-
-.violet{
-    background-color: purple;
-}
+/*# sourceMappingURL=screen.css.map */

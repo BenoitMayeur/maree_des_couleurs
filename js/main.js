@@ -39,6 +39,7 @@ function play(color) {
         console.log(isWin(listDivMaree, color));
         if(isWin(listDivMaree, color)){
             showMessage(amountOfTimes);
+            
         }
     }
 
