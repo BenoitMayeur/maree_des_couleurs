@@ -90,19 +90,19 @@ h2{
     padding-bottom: 100%;
 }
 
-.rouge{
+.firstColor{
     background-color: map-get($colors, color_maree_1);
 }
 
-.vert{
+.secondColor{
     background-color: map-get($colors, color_maree_2);
 }
 
-.bleu{
+.thirdColor{
     background-color: map-get($colors, color_maree_3);
 }
 
-.violet{
+.fourthColor{
     background-color:  map-get($colors, color_maree_4);
 }
 

@@ -15,10 +15,10 @@ let amountLines = 20;
 let amountColumns = 20;
 
 const colors = [
-    'rouge', 
-    'vert',
-    'bleu',
-    'violet'
+    'firstColor', 
+    'secondColor',
+    'thirdColor',
+    'fourthColor'
 ];
 
 

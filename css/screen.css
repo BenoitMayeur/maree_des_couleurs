@@ -197,19 +197,19 @@ h2 {
   padding-bottom: 100%;
 }
 
-.rouge {
+.firstColor {
   background-color: aqua;
 }
 
-.vert {
+.secondColor {
   background-color: lime;
 }
 
-.bleu {
+.thirdColor {
   background-color: yellow;
 }
 
-.violet {
+.fourthColor {
   background-color: fuchsia;
 }
 
