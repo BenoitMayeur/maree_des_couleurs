@@ -1,0 +1,50 @@
+header{
+    position: relative;
+    height: 100px;
+    background: map-get($colors, background_color_header);
+    padding-bottom: 6px;
+
+}
+
+header::after{
+    content: '';
+    height: 6px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
+    background: map-get($colors, color_maree_1);; /* Old browsers */
+    background: -moz-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+    background: linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+  }
+
+  h1{
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 100px;
+    max-width: 1140px;
+    text-align: center;
+    color: map-get($colors, color_text_main);
+    font-family: 'Goldman', cursive;
+}
+
+.divH1{
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 768px){
+    h1{
+
+        font-size: 2rem;
+        text-align: left;
+    }
+
+
+    
+}

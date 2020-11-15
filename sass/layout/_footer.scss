@@ -1,0 +1,48 @@
+footer{
+    height: 7rem;
+    background: map-get($colors, background_color_header);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fMainDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.fListIcons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+
+}
+
+.fDivOneIcon{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.iIconGit:hover{
+    color: map-get($colors, color_maree_1);
+}
+
+.iIconLn:hover{
+    color: map-get($colors, color_maree_2);
+}
+
+.iIconInst:hover{
+    color: map-get($colors, color_maree_4);
+}
+
+i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+p{
+    text-align: center;
+}
