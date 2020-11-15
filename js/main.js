@@ -69,8 +69,6 @@ function showMessage(amountOfTimes){
 * @param {number} lines le nombre de ligne
 * @param {number} columns le nombre de colonnes
 * @param {HTMLDivElement} divParent le div où on l'on place les divs générés
-* @returns {DivHTMLElement[][]} un tableau à deux dimensions contenant les références des divs générés
-*           <div class="carre" data-ligne="2" data-colonne="4" data-color='rouge'></div>
 */
 function generateMaree (tabColors, lines, columns, divParent){
     arrayColors = tabColors;
