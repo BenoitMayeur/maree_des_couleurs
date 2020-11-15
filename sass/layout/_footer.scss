@@ -4,6 +4,12 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
+}
+
+i {
+    font-size: 1.5rem;
+    color: white;
 }
 
 .fMainDiv{
@@ -38,11 +44,8 @@ footer{
     color: map-get($colors, color_maree_4);
 }
 
-i {
-    font-size: 1.5rem;
-    color: white;
-}
 
-p{
+
+.fParagraph{
     text-align: center;
 }

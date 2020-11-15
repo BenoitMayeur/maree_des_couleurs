@@ -116,6 +116,10 @@ h1 {
     text-align: left;
   }
 }
+main {
+  flex: 1 0 auto;
+}
+
 h2, p {
   color: white;
   font-family: "Goldman", cursive;
@@ -229,6 +233,12 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
+}
+
+i {
+  font-size: 1.5rem;
+  color: white;
 }
 
 .fMainDiv {
@@ -262,12 +272,7 @@ footer {
   color: fuchsia;
 }
 
-i {
-  font-size: 1.5rem;
-  color: white;
-}
-
-p {
+.fParagraph {
   text-align: center;
 }
 
@@ -275,8 +280,14 @@ html {
   font-size: 17px;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background-color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=screen.css.map */

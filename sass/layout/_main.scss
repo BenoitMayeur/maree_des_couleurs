@@ -1,3 +1,7 @@
+main{
+    flex: 1 0 auto;
+}
+
 h2, p{
     
     color: map-get($colors, color_text_main);
