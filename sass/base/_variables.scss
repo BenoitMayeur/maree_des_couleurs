@@ -1,36 +1,12 @@
-/*
-
-$colors: (
-    back_color_main: #fff,
-    back_color_second: #faf9ff,
-    color_title: #222222,
-    color_text: #777777,
-    color_link: #edc587,
-    back_color_graduation1: rgb(255, 229, 153),
-    back_color_graduation2: #cbcbcb,
-    back_color_footer: black,
-    border_color: rgb(185, 184, 184)
-);
-
-
-@mixin flex_center_center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-*/
-
 $colors: (
     background_color_body: rgb(58, 58, 58),
     color_text_main: white,
     background_color_grid: black,
-    color_maree_1:rgb(0, 255, 255),
+    color_maree_1:	rgb(0,135,255),
     color_maree_2: rgb(0, 255, 0),
     color_maree_3: rgb(255, 255, 0),
     color_maree_4: rgb(255, 0, 255),
     background_color_header: #999999
-
 );
 
 $sizes: (
