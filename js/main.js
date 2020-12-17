@@ -36,7 +36,7 @@ function play(color) {
     amountOfTimes++;
 
     for(let color of colors){
-        console.log(isWin(listDivMaree, color));
+
         if(isWin(listDivMaree, color)){
             showMessage(amountOfTimes);
             
@@ -251,9 +251,11 @@ function setCouleur(div, couleur) {
     for(color of colors){
 
         div.classList.remove(color);
+
     }
 
     div.classList.add(couleur);
+
     div.setAttribute("data-color", couleur);
 
 
@@ -266,8 +268,6 @@ function setCouleur(div, couleur) {
  * @returns {boolean}
  */
 function isWin(divs, color){
-
-    console.log("isWin");
 
     for(let div of divs){
         if(div.getAttribute("data-color") !== color){
@@ -283,7 +283,6 @@ function isWin(divs, color){
  */
 
 function restartTheGame(){
-    console.log("On recommence le jeu!");
 
     amountOfTimes = 0;
 
