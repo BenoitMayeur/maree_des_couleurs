@@ -49,12 +49,11 @@ const DIVNO = document.getElementsByClassName("modalNo")[0];
 // When the user clicks on <span> (x), close the modal
 SPAN_CLOSE.onclick = function() {
     MODAL.style.display = "none";
+    window.clearInterval(myTimer);
+    COUNTDOWN.innerHTML = `01:00`;
 }
 
-// When the user clicks on the button "Non" in the modal, close the modal
-DIVNO.onclick = function() {
-    MODAL.style.display = "none";
-  }
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -395,6 +394,7 @@ function restartTheGame(){
 
     amountOfTimes = 0;
     startingMinutes = 1;
+    rotation = 1;
     displayAmountMoves(amountOfTimes);
 
     MAREE.style.transform='';
