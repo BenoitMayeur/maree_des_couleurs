@@ -353,7 +353,8 @@ function restartTheGame(){
 
     amountOfTimes = 0;
     startingMinutes = 0.6;
-
+    displayAmountMoves(amountOfTimes);
+    
     for(div of listDivMaree){
         div.remove();
     }
