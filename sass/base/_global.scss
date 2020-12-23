@@ -1,0 +1,13 @@
+html{
+    font-size: 17px;
+}
+
+html, body {
+    height: 100%;
+  }
+
+body{
+    background-color: map-get($colors, background_color_body);
+    display: flex;
+    flex-direction: column;
+}

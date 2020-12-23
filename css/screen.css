@@ -337,6 +337,20 @@ template {
   display: none;
 }
 
+html {
+  font-size: 17px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #3a3a3a;
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   position: relative;
   height: 100px;
@@ -672,20 +686,6 @@ i {
 .fParagraph {
   text-align: center;
   margin: 0;
-}
-
-html {
-  font-size: 17px;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  background-color: #3a3a3a;
-  display: flex;
-  flex-direction: column;
 }
 
 /*# sourceMappingURL=screen.css.map */
