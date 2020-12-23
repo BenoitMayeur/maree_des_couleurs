@@ -25,6 +25,7 @@ const COLORS = [
 ];
 
 const BUTTONLAUNCHGAME = document.querySelector('.buttonLaunchGame');
+const DIVEXPLANATIONS = document.getElementsByClassName('divExplanations')[0];
 
 // Variables for the timer
 let startingMinutes;
@@ -467,6 +468,8 @@ function resetTimer(){
 BUTTONLAUNCHGAME.addEventListener("click", function() {
 
     BUTTONLAUNCHGAME.classList.add("buttonLaunchGameAway");
+    console.log(DIVEXPLANATIONS)
+    DIVEXPLANATIONS.style.display = "none";
 
     startTimer();
 

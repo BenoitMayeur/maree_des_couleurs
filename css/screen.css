@@ -793,6 +793,7 @@ h2 {
   font-family: "Goldman", "cursive";
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .moves {
