@@ -87,7 +87,7 @@ function play(color) {
     displayAmountMoves(amountOfTimes);
 
     if(amountOfTimes%5 === 0 && amountOfTimes>=5){
-        console.log("dans la condition to shake");
+
         shakeTheGame();
     }
 
@@ -102,13 +102,15 @@ function play(color) {
     
 }
 
+/**
+ * Fonctions pour secouer le jeu et faire tourner la grille
+ *
+ */
+
 function shakeTheGame(){
-    console.log("dans la fonction to shake");
 
     let degrees = rotation*90;
     rotation++;
-
-    console.log("degrees", degrees)
 
     BODY.style.animation="vibrate-3 1s linear forwards";
     BODY.style.overflow="hidden";
@@ -419,7 +421,7 @@ function updateCountDown(){
     seconds = seconds < 10 ? '0' + seconds : seconds;
 
     if(minutes == 1){
-        console.log("minutes === 1")
+
         COUNTDOWN.innerHTML = `01:00`;
     }
     else{
@@ -468,7 +470,7 @@ function resetTimer(){
 BUTTONLAUNCHGAME.addEventListener("click", function() {
 
     BUTTONLAUNCHGAME.classList.add("buttonLaunchGameAway");
-    console.log(DIVEXPLANATIONS)
+
     DIVEXPLANATIONS.style.display = "none";
 
     startTimer();
