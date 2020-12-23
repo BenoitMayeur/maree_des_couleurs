@@ -1,4 +1,4 @@
-/*
+/*  
     - Soit une grille de x ligne y colonne composée de carré de couleur aléatoire
     - et un bouton par couleur possible
     - quand on clique sur un bouton on transmet la couleur du bouton au carré qui est en haut à gauche
@@ -6,6 +6,9 @@
         changent aussi de couleur
     - on propage l'opération
     - Si tous les carrés sont de la même couleur c'est gagné
+
+
+    Les variables sont anglais et les commentaires en français pour l'instant
 */
 
 let amountOfTimes = 0;
@@ -60,7 +63,7 @@ window.onclick = function(event) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// FUNCTIONS //////////////////////////
+// Fonctions //////////////////////////
 ////////////////////////////
 
 /**
@@ -420,13 +423,18 @@ function resetTimer(){
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /********************************************************************
- ************************** Code starts here 
+ ************************** Le jeu commence ici
  */
 
 BUTTONLAUNCHGAME.addEventListener("click", function() {
+
+    BUTTONLAUNCHGAME.classList.add("buttonLaunchGameAway");
+
     startTimer();
 
-    BUTTONLAUNCHGAME.style.display = "none";
+    for(let button of listButtons){
+        button.style.pointerEvents = "auto";
+    }
 })
 
 generateButtons(COLORS);
