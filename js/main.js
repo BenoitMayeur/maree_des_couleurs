@@ -21,6 +21,8 @@ const COLORS = [
     'fourthColor'
 ];
 
+const BUTTONLAUNCHGAME = document.querySelector('.buttonLaunchGame');
+
 // Variables for the timer
 let startingMinutes;
 let time;
@@ -352,9 +354,9 @@ function isWin(divs, color){
 function restartTheGame(){
 
     amountOfTimes = 0;
-    startingMinutes = 0.6;
+    startingMinutes = 1;
     displayAmountMoves(amountOfTimes);
-    
+
     for(div of listDivMaree){
         div.remove();
     }
@@ -398,7 +400,7 @@ function updateCountDown(){
 
 
 function startTimer(){
-    startingMinutes = 0.6;
+    startingMinutes = 1;
     time = startingMinutes * 60;
     myTimer = setInterval(updateCountDown, 1000);
 }
@@ -410,7 +412,7 @@ function startTimer(){
 
 function resetTimer(){
     window.clearInterval(myTimer);
-    startingMinutes = 0.6;
+    startingMinutes = 1;
     time = startingMinutes * 60;
     myTimer = setInterval(updateCountDown, 1000);
 
@@ -421,9 +423,15 @@ function resetTimer(){
  ************************** Code starts here 
  */
 
+BUTTONLAUNCHGAME.addEventListener("click", function() {
+    startTimer();
+
+    BUTTONLAUNCHGAME.style.display = "none";
+})
+
 generateButtons(COLORS);
 
-startTimer();
+
 
 listDivMaree = generateMaree(COLORS, amountLines, amountColumns, "maree");
 
