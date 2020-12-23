@@ -1,5 +1,6 @@
 html{
     font-size: 17px;
+    font-family: map-get($polices, font_family);
 }
 
 html, body {

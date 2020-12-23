@@ -27,9 +27,13 @@ let time;
 let myTimer;
 const COUNTDOWN = document.querySelector('.timer');
 
+// Variables nombre de coups
+
+const DIV_MOVES = document.querySelector(".spanMoves");
+
 
 // Variables for the modal appearing at the end of the round
-const MODAL = document.getElementById("myModal");
+const MODAL = document.getElementsByClassName("modal")[0];
 
 // Get the <span> element that closes the modal
 const SPAN_CLOSE = document.getElementsByClassName("close")[0];
@@ -69,6 +73,7 @@ function play(color) {
     changeColor(firstDiv.getAttribute('data-color'), color, firstDiv);
 
     amountOfTimes++;
+    displayAmountMoves(amountOfTimes);
 
     for(let color of COLORS){
 
@@ -79,6 +84,18 @@ function play(color) {
     }
 
     
+}
+
+/**
+ * Fonctions pour montrer le nombre de coups joués
+
+ * @param {number} moves 
+ */
+
+function displayAmountMoves(moves){
+
+    DIV_MOVES.innerHTML = moves
+
 }
 
 
