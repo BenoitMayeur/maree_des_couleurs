@@ -601,34 +601,6 @@ h2 {
   animation-fill-mode: forwards;
 }
 
-@-webkit-keyframes turn-it {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  40% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-  100% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-}
-@keyframes turn-it {
-  0% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-  40% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-  100% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-}
 .messageDone {
   background-color: white;
   width: 10rem;
@@ -675,7 +647,7 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 0 0 2px #000, 0 0 0 3px #999, 0 0 0 16px #a8a8a8, 0 0 0 10px #666, 0 0 0 16px #e4e4e4, 0 0 0 18px #000;
-  transition-property: rotate;
+  transition-property: transform;
   transition-duration: 1s;
 }
 

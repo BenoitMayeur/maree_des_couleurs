@@ -112,7 +112,7 @@ function shakeTheGame(){
 
     BODY.style.animation="vibrate-3 1s linear forwards";
     BODY.style.overflow="hidden";
-    MAREE.style.rotate=`${degrees}deg`;
+    MAREE.style.transform=`rotate(${degrees}deg)`;
     setTimeout(function(){
         BODY.style.animation="";
     }, 2000);
@@ -389,7 +389,7 @@ function restartTheGame(){
     startingMinutes = 1;
     displayAmountMoves(amountOfTimes);
 
-    MAREE.style.rotate='';
+    MAREE.style.transform='';
 
     for(div of listDivMaree){
         div.remove();
