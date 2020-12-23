@@ -599,6 +599,13 @@ h2 {
   background-color: red;
 }
 
+.timer {
+  color: white;
+  font-family: "Goldman", cursive;
+  display: flex;
+  justify-content: center;
+}
+
 @media only screen and (min-width: 768px) {
   .divExplanations {
     margin-left: auto;

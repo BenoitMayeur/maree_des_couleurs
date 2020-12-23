@@ -14,13 +14,48 @@ let listDivMaree;
 let amountLines = 20;
 let amountColumns = 20;
 
-const colors = [
+const COLORS = [
     'firstColor', 
     'secondColor',
     'thirdColor',
     'fourthColor'
 ];
 
+// Variables for the timer
+let startingMinutes;
+let time;
+let myTimer;
+const COUNTDOWN = document.querySelector('.timer');
+
+
+// Variables for the modal appearing at the end of the round
+const MODAL = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+const SPAN_CLOSE = document.getElementsByClassName("close")[0];
+
+const DIVNO = document.getElementsByClassName("modalNo")[0];
+
+// When the user clicks on <span> (x), close the modal
+SPAN_CLOSE.onclick = function() {
+    MODAL.style.display = "none";
+}
+
+// When the user clicks on the button "Non" in the modal, close the modal
+DIVNO.onclick = function() {
+    MODAL.style.display = "none";
+  }
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == MODAL) {
+    MODAL.style.display = "none";
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// FUNCTIONS //////////////////////////
+////////////////////////////
 
 /**
  * Fonctions appelée au click sur un bouton qui lance la marée, teste la victoire et compte les coups
@@ -35,10 +70,10 @@ function play(color) {
 
     amountOfTimes++;
 
-    for(let color of colors){
+    for(let color of COLORS){
 
         if(isWin(listDivMaree, color)){
-            showMessage(amountOfTimes);
+            showMessage(amountOfTimes, true);
             
         }
     }
@@ -46,29 +81,37 @@ function play(color) {
     
 }
 
+
 /**
  * Fonction pour faire apparaitre un message en fin de partie et le choix de recommencer
+ * fonction impure
+ * @param {number} amountOfTimes nombre de fois que la personne a cliqué
+ * @param {boolean} isWon a-t'il gagné?
  */
 
-function showMessage(amountOfTimes){
+function showMessage(amountOfTimes, isWon){
 
-    modal.style.display = "block";
+    MODAL.style.display = "block";
 
-    document.querySelector(".textModal").innerHTML = `Vous avez gagné en ${amountOfTimes} coups! \n Voulez-vous recommencer?`; 
+    if(isWon){
+        document.querySelector(".textModal").innerHTML = `Vous avez gagné en ${amountOfTimes} coups! \n Voulez-vous recommencer?`; 
+        window.clearInterval(myTimer);
+        COUNTDOWN.innerHTML = `Gagné!`;
+
+    }
+    else{
+        document.querySelector(".textModal").innerHTML = `Vous avez perdu! Voulez-vous recommencer?`; 
+
+    }
+
 
     let divYes = document.getElementsByClassName("modalYes")[0];
 
     divYes.onclick = function() {
-        modal.style.display = "none";
+        MODAL.style.display = "none";
+        resetTimer();
         restartTheGame();
     }
-
-//    let answer = confirm(`Vous avez gagné en ${amountOfTimes} coups! 
-//    Voulez-vous recommencer?`);
-
-//     if (answer == true) {
-//         restartTheGame();
-//     } 
 
 }
 
@@ -152,6 +195,7 @@ function changeColor(oldColor, newColor, div){
  * @param {HTMLDivElement} div 
  * @returns {HTMLDivElement | null} le div du dessus ou null
  */
+
 function getHaut(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
@@ -171,6 +215,7 @@ function getHaut(div) {
  * @param {HTMLDivElement} div 
  * @returns {HTMLDivElement | null} le div du dessous ou null
  */
+
 function getBas(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
@@ -192,6 +237,7 @@ function getBas(div) {
  * @param {HTMLDivElement} div 
  * @returns {HTMLDivElement | null} le div à gauche ou null
  */
+
 function getGauche(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
@@ -211,6 +257,7 @@ function getGauche(div) {
  * @param {HTMLDivElement} div 
  * @returns {HTMLDivElement | null} le div à droite ou null
  */
+
 function getDroite(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
@@ -231,6 +278,7 @@ function getDroite(div) {
  * @param {number} colonne le numéro de colonne
  * @returns {HTMLDivElement | null} le div ou null
  */
+
 function getDiv(ligne, colonne) {
 
     if(document.querySelector(`[data-ligne="${ligne}"][data-colonne="${colonne}"]`)){
@@ -246,9 +294,10 @@ function getDiv(ligne, colonne) {
  * @param {DivHTMLElement} div 
  * @param {string} couleur 
  */
+
 function setCouleur(div, couleur) {
 
-    for(color of colors){
+    for(color of COLORS){
 
         div.classList.remove(color);
 
@@ -267,6 +316,7 @@ function setCouleur(div, couleur) {
  * @param {string} couleur 
  * @returns {boolean}
  */
+
 function isWin(divs, color){
 
     for(let div of divs){
@@ -285,24 +335,79 @@ function isWin(divs, color){
 function restartTheGame(){
 
     amountOfTimes = 0;
+    startingMinutes = 0.6;
 
     for(div of listDivMaree){
         div.remove();
     }
 
-    listDivMaree = generateMaree(colors, amountLines, amountColumns, "maree");
+    listDivMaree = generateMaree(COLORS, amountLines, amountColumns, "maree");
 
 
 }
 
+/**
+ * Fonction updateCountDown pour mettre à jour le timer sur la page
+ */
 
+function updateCountDown(){
+    let minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    if(minutes == 1){
+        console.log("minutes === 1")
+        COUNTDOWN.innerHTML = `01:00`;
+    }
+    else{
+        minutes = "00"
+        COUNTDOWN.innerHTML = `${minutes}:${seconds}`;
+    }
+
+    time--;
+
+    if(time < 0){
+        time = 0;
+        showMessage(0, false);
+    }
+
+}
+
+/**
+ * Fonction startTimer pour que le timer commence
+ */
+
+
+function startTimer(){
+    startingMinutes = 0.6;
+    time = startingMinutes * 60;
+    myTimer = setInterval(updateCountDown, 1000);
+}
+
+/**
+ * Fonction resetTimer pour remettre à zéro le timer
+ */
+
+
+function resetTimer(){
+    window.clearInterval(myTimer);
+    startingMinutes = 0.6;
+    time = startingMinutes * 60;
+    myTimer = setInterval(updateCountDown, 1000);
+
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /********************************************************************
  ************************** Code starts here 
  */
 
-generateButtons(colors);
+generateButtons(COLORS);
 
-listDivMaree = generateMaree(colors, amountLines, amountColumns, "maree");
+startTimer();
+
+listDivMaree = generateMaree(COLORS, amountLines, amountColumns, "maree");
 
 listButtons = document.querySelectorAll(".buttonOneColor");
 
@@ -312,34 +417,4 @@ for(let button of listButtons){
 
         play(color);
     })
-}
-
-///////////////////////////////
-
-// Get the modal
-let modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-let btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-let span = document.getElementsByClassName("close")[0];
-
-let divNo = document.getElementsByClassName("modalNo")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks on the button "Non" in the modal, close the modal
-divNo.onclick = function() {
-    modal.style.display = "none";
-  }
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
 }

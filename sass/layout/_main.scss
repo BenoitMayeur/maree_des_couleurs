@@ -179,7 +179,7 @@ h2{
   }
 
   .divButtons{
-        font-family: 'Goldman', cursive;
+    font-family: 'Goldman', cursive;
       width: 10rem;
       margin: 0 auto;
       display: flex;
@@ -211,7 +211,13 @@ h2{
     }
   }
 
+.timer{
+    color: white;
+    font-family: 'Goldman', cursive;
+    display: flex;
+    justify-content: center;
 
+}
 
 
 
