@@ -31,7 +31,7 @@ let startingMinutes;
 let time;
 let myTimer;
 const COUNTDOWN = document.querySelector('.timer');
-
+COUNTDOWN.innerHTML = `01:00`;
 // Variables nombre de coups
 
 const DIV_MOVES = document.querySelector(".spanMoves");
@@ -62,6 +62,12 @@ window.onclick = function(event) {
   }
 }
 
+//  Variables to shake the game
+
+const BODY = document.querySelector("body");
+const MAREE = document.querySelector(".maree");
+let rotation = 1;
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Fonctions //////////////////////////
 ////////////////////////////
@@ -80,6 +86,11 @@ function play(color) {
     amountOfTimes++;
     displayAmountMoves(amountOfTimes);
 
+    if(amountOfTimes%5 === 0 && amountOfTimes>=5){
+        console.log("dans la condition to shake");
+        shakeTheGame();
+    }
+
     for(let color of COLORS){
 
         if(isWin(listDivMaree, color)){
@@ -89,6 +100,24 @@ function play(color) {
     }
 
     
+}
+
+function shakeTheGame(){
+    console.log("dans la fonction to shake");
+
+    let degrees = rotation*90;
+    rotation++;
+
+    console.log("degrees", degrees)
+
+    BODY.style.animation="vibrate-3 1s linear forwards";
+    BODY.style.overflow="hidden";
+    MAREE.style.rotate=`${degrees}deg`;
+    setTimeout(function(){
+        BODY.style.animation="";
+    }, 2000);
+
+
 }
 
 /**
@@ -359,6 +388,8 @@ function restartTheGame(){
     amountOfTimes = 0;
     startingMinutes = 1;
     displayAmountMoves(amountOfTimes);
+
+    MAREE.style.rotate='';
 
     for(div of listDivMaree){
         div.remove();
