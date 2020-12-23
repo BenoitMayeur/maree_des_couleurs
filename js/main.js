@@ -157,11 +157,18 @@ function showMessage(amountOfTimes, isWon){
 
 
     let divYes = document.getElementsByClassName("modalYes")[0];
+    let divNo = document.getElementsByClassName("modalNo")[0];
 
     divYes.onclick = function() {
         MODAL.style.display = "none";
         resetTimer();
         restartTheGame();
+    }
+
+    divNo.onclick = function() {
+        MODAL.style.display = "none";
+        window.clearInterval(myTimer);
+        COUNTDOWN.innerHTML = `01:00`;
     }
 
 }
