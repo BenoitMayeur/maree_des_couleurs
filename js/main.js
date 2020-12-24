@@ -444,9 +444,9 @@ function updateCountDown(){
 
 
 function startTimer(){
-    // startingMinutes = 1;
-    // time = startingMinutes * 60;
-    // myTimer = setInterval(updateCountDown, 1000);
+    startingMinutes = 1;
+    time = startingMinutes * 60;
+    myTimer = setInterval(updateCountDown, 1000);
 }
 
 /**
