@@ -113,7 +113,7 @@ function shakeTheGame(){
     rotation++;
 
     BODY.style.animation="vibrate-3 1s linear forwards";
-    BODY.style.overflow="hidden";
+
     MAREE.style.transform=`rotate(${degrees}deg)`;
     setTimeout(function(){
         BODY.style.animation="";

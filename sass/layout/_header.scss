@@ -15,10 +15,10 @@ header::after{
     bottom: 0;
 
     /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
-    background: map-get($colors, color_maree_1);; /* Old browsers */
-    background: -moz-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
-    background: linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+    background: map-get($colors, color_maree_1_smart);; /* Old browsers */
+    background: -moz-linear-gradient(left, map-get($colors, color_maree_1_smart) 0%, map-get($colors, color_maree_1_smart) 25%, map-get($colors, color_maree_3_smart) 25%,map-get($colors, color_maree_3_smart) 50%, map-get($colors, color_maree_2_smart) 50%, map-get($colors, color_maree_2_smart) 75%, map-get($colors, color_maree_4_smart) 75%, map-get($colors, color_maree_4_smart) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, map-get($colors, color_maree_1_smart) 0%, map-get($colors, color_maree_1_smart) 25%, map-get($colors, color_maree_3_smart) 25%,map-get($colors, color_maree_3_smart) 50%, map-get($colors, color_maree_2_smart) 50%, map-get($colors, color_maree_2_smart) 75%, map-get($colors, color_maree_4_smart) 75%, map-get($colors, color_maree_4_smart) 100%); /* FF3.6-15 */
+    background: linear-gradient(left, map-get($colors, color_maree_1_smart) 0%, map-get($colors, color_maree_1_smart) 25%, map-get($colors, color_maree_3_smart) 25%,map-get($colors, color_maree_3_smart) 50%, map-get($colors, color_maree_2_smart) 50%, map-get($colors, color_maree_2_smart) 75%, map-get($colors, color_maree_4_smart) 75%, map-get($colors, color_maree_4_smart) 100%); /* FF3.6-15 */
   }
 
   h1{
@@ -44,6 +44,15 @@ header::after{
         font-size: 2rem;
         text-align: left;
     }
+
+    header::after{
+
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
+        background: map-get($colors, color_maree_1);; /* Old browsers */
+        background: -moz-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+        background: linear-gradient(left, map-get($colors, color_maree_1) 0%, map-get($colors, color_maree_1) 25%, map-get($colors, color_maree_3) 25%,map-get($colors, color_maree_3) 50%, map-get($colors, color_maree_2) 50%, map-get($colors, color_maree_2) 75%, map-get($colors, color_maree_4) 75%, map-get($colors, color_maree_4) 100%); /* FF3.6-15 */
+      }
 
 
     

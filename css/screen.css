@@ -368,11 +368,11 @@ header::after {
   /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
   background: #0087ff;
   /* Old browsers */
-  background: -moz-linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  background: -moz-linear-gradient(left, #0087ff 0%, #0087ff 25%, #ffff00 25%, #ffff00 50%, #00ffff 50%, #00ffff 75%, fuchsia 75%, fuchsia 100%);
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  background: -webkit-linear-gradient(left, #0087ff 0%, #0087ff 25%, #ffff00 25%, #ffff00 50%, #00ffff 50%, #00ffff 75%, fuchsia 75%, fuchsia 100%);
   /* FF3.6-15 */
-  background: linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+  background: linear-gradient(left, #0087ff 0%, #0087ff 25%, #ffff00 25%, #ffff00 50%, #00ffff 50%, #00ffff 75%, fuchsia 75%, fuchsia 100%);
   /* FF3.6-15 */
 }
 
@@ -396,6 +396,18 @@ h1 {
   h1 {
     font-size: 2rem;
     text-align: left;
+  }
+
+  header::after {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ed8034+0,ed8034+33,feb123+33,feb123+66,2184cd+66,2184cd+100 */
+    background: #0087ff;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+    /* FF3.6-15 */
+    background: linear-gradient(left, #0087ff 0%, #0087ff 25%, yellow 25%, yellow 50%, lime 50%, lime 75%, fuchsia 75%, fuchsia 100%);
+    /* FF3.6-15 */
   }
 }
 main {
@@ -696,11 +708,11 @@ h2 {
 }
 
 .secondColor {
-  background-color: lime;
+  background-color: #00ffff;
 }
 
 .thirdColor {
-  background-color: yellow;
+  background-color: #ffff00;
 }
 
 .fourthColor {
@@ -804,6 +816,22 @@ h2 {
 }
 
 @media only screen and (min-width: 768px) {
+  .firstColor {
+    background-color: #0087ff;
+  }
+
+  .secondColor {
+    background-color: lime;
+  }
+
+  .thirdColor {
+    background-color: yellow;
+  }
+
+  .fourthColor {
+    background-color: fuchsia;
+  }
+
   .divExplanations {
     margin-left: auto;
     margin-right: auto;
