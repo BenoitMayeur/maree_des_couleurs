@@ -660,6 +660,7 @@ h2 {
   box-shadow: 0 0 0 2px #000, 0 0 0 3px #999, 0 0 0 16px #a8a8a8, 0 0 0 10px #666, 0 0 0 16px #e4e4e4, 0 0 0 18px #000;
   transition-property: transform;
   transition-duration: 1s;
+  overflow: hidden;
 }
 
 .divOneColor {
