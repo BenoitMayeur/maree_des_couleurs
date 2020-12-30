@@ -16,6 +16,7 @@ let listButtons;
 let listDivMaree;
 let amountLines = 20;
 let amountColumns = 20;
+let gameWon = false;
 
 const COLORS = [
     'firstColor', 
@@ -83,23 +84,25 @@ function play(color) {
 
     changeColor(firstDiv.getAttribute('data-color'), color, firstDiv);
 
-    amountOfTimes++;
-    displayAmountMoves(amountOfTimes);
+    if(!gameWon){
+        amountOfTimes++;
+        displayAmountMoves(amountOfTimes);
 
-    if(amountOfTimes%5 === 0 && amountOfTimes>=5){
-
-        shakeTheGame();
-    }
-
-    for(let color of COLORS){
-
-        if(isWin(listDivMaree, color)){
-            showMessage(amountOfTimes, true);
-            
+        if(amountOfTimes%5 === 0 && amountOfTimes>=5){
+            shakeTheGame();
         }
+        
+        for(let color of COLORS){
+
+            if(isWin(listDivMaree, color)){
+                showMessage(amountOfTimes, true);    
+                gameWon = true;
+            }
+        }
+
     }
 
-    
+
 }
 
 /**
@@ -118,7 +121,6 @@ function shakeTheGame(){
     setTimeout(function(){
         BODY.style.animation="";
     }, 2000);
-
 
 }
 
@@ -232,9 +234,11 @@ function generateButtons(tabColors){
  */
 function changeColor(oldColor, newColor, div){
 
+    getAnimation(oldColor, newColor, div);
+
     setCouleur(div, newColor);
 
-    let divsAround = [getHaut(div), getBas(div), getGauche(div), getDroite(div)]
+    let divsAround = [getUp(div), getDown(div), getLeft(div), getRight(div)]
 
     for(let divAround of divsAround){
         if(divAround){
@@ -256,7 +260,7 @@ function changeColor(oldColor, newColor, div){
  * @returns {HTMLDivElement | null} le div du dessus ou null
  */
 
-function getHaut(div) {
+function getUp(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
@@ -276,7 +280,7 @@ function getHaut(div) {
  * @returns {HTMLDivElement | null} le div du dessous ou null
  */
 
-function getBas(div) {
+function getDown(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
@@ -298,7 +302,7 @@ function getBas(div) {
  * @returns {HTMLDivElement | null} le div à gauche ou null
  */
 
-function getGauche(div) {
+function getLeft(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
@@ -318,7 +322,7 @@ function getGauche(div) {
  * @returns {HTMLDivElement | null} le div à droite ou null
  */
 
-function getDroite(div) {
+function getRight(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
@@ -394,6 +398,7 @@ function isWin(divs, color){
 
 function restartTheGame(){
 
+    gameWon = false;
     amountOfTimes = 0;
     startingMinutes = 1;
     rotation = 1;
@@ -461,6 +466,20 @@ function resetTimer(){
     myTimer = setInterval(updateCountDown, 1000);
 
 }
+
+
+function getAnimation(oldColor, newColor, div) {
+    div.animate([
+        // keyframes
+        { transform: 'rotateX(0deg) rotateY(0deg)','background-color': oldColor}, 
+        { transform: 'rotateX(90deg) rotateX(90deg)', 'background-color': newColor }
+    ], { 
+    // timing options
+    duration: 200,
+    iterations: 1
+    });
+}
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /********************************************************************
