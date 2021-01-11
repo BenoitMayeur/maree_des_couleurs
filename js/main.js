@@ -264,13 +264,8 @@ function getUp(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
+    keyLine === 0 ? answer = null: answer = getDiv(keyLine-1, keyColumn);
 
-    if(keyLine === 0){
-        answer = null;
-    }
-    else{
-        answer = getDiv(keyLine-1, keyColumn);
-    }
     return answer;
 }
 
@@ -284,14 +279,7 @@ function getDown(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
-
-    if(keyLine === amountLines-1){
-
-        answer = null;
-    }
-    else{
-        answer = getDiv(keyLine+1, keyColumn);
-    }
+    keyLine === amountLines-1 ? answer = null : answer = getDiv(keyLine+1, keyColumn);
 
     return answer
 }
@@ -306,13 +294,8 @@ function getLeft(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
+    keyColumn === 0 ? answer = null: answer = getDiv(keyLine, keyColumn-1);
 
-    if(keyColumn === 0){
-        answer = null;
-    }
-    else{
-        answer = getDiv(keyLine, keyColumn-1);
-    }
     return answer;
 }
 
@@ -326,13 +309,8 @@ function getRight(div) {
     keyLine = Number(div.getAttribute("data-ligne"));
     keyColumn = Number(div.getAttribute("data-colonne"));
 
-
-    if(keyColumn === amountColumns-1){
-        answer = null;
-    }
-    else{
-        answer = getDiv(keyLine, keyColumn+1);
-    }
+    keyColumn === amountColumns-1 ? answer = null: answer = getDiv(keyLine, keyColumn+1);
+    
     return answer;
 }
 
